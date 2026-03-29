@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Saved Lists | The Editorial Harvest</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-fixed-variant": "#00377b",
+                        "outline-variant": "#abadaf",
+                        "on-tertiary-fixed": "#00163b",
+                        "surface-container-low": "#eef1f3",
+                        "primary-container": "#69f6b8",
+                        "error-container": "#f95630",
+                        "on-secondary-fixed-variant": "#724700",
+                        "surface-container-highest": "#d9dde0",
+                        "tertiary-dim": "#004ca6",
+                        "outline": "#747779",
+                        "surface-container": "#e5e9eb",
+                        "background": "#f5f7f9",
+                        "on-secondary-container": "#663f00",
+                        "on-primary-container": "#005a3c",
+                        "surface-bright": "#f5f7f9",
+                        "surface": "#f5f7f9",
+                        "secondary": "#815100",
+                        "surface-dim": "#d0d5d8",
+                        "on-background": "#2c2f31",
+                        "on-secondary-fixed": "#4c2e00",
+                        "inverse-on-surface": "#9a9d9f",
+                        "surface-container-high": "#dfe3e6",
+                        "primary-fixed": "#69f6b8",
+                        "secondary-dim": "#714600",
+                        "tertiary-container": "#8ab0ff",
+                        "on-primary-fixed-variant": "#006544",
+                        "on-error": "#ffefec",
+                        "inverse-surface": "#0b0f10",
+                        "tertiary-fixed": "#8ab0ff",
+                        "inverse-primary": "#69f6b8",
+                        "error-dim": "#b92902",
+                        "secondary-fixed-dim": "#ffb554",
+                        "tertiary-fixed-dim": "#73a2ff",
+                        "tertiary": "#0057bd",
+                        "surface-variant": "#d9dde0",
+                        "on-surface-variant": "#595c5e",
+                        "secondary-container": "#ffc885",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#c8ffe0",
+                        "on-error-container": "#520c00",
+                        "error": "#b02500",
+                        "primary-fixed-dim": "#58e7ab",
+                        "primary": "#006947",
+                        "surface-tint": "#006947",
+                        "secondary-fixed": "#ffc885",
+                        "primary-dim": "#005c3d",
+                        "on-primary-fixed": "#00452d",
+                        "on-surface": "#2c2f31",
+                        "on-tertiary": "#f0f2ff",
+                        "on-tertiary-container": "#002e6a",
+                        "on-secondary": "#fff0e3"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-2">
+<span class="text-xl font-bold tracking-tight text-emerald-900 dark:text-emerald-50 font-headline">The Editorial Harvest</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-slate-500 dark:text-slate-400 font-manrope text-xs font-bold uppercase tracking-widest hover:bg-emerald-50 dark:hover:bg-emerald-900/30 transition-colors px-3 py-2 rounded-lg" href="#">Market</a>
+<a class="text-emerald-700 dark:text-emerald-300 font-semibold font-manrope text-xs uppercase tracking-widest bg-emerald-50 dark:bg-emerald-900/20 px-3 py-2 rounded-lg" href="#">Saved</a>
+<a class="text-slate-500 dark:text-slate-400 font-manrope text-xs font-bold uppercase tracking-widest hover:bg-emerald-50 dark:hover:bg-emerald-900/30 transition-colors px-3 py-2 rounded-lg" href="#">Calculators</a>
+</div>
+<div class="flex items-center gap-4 text-emerald-800 dark:text-emerald-400">
+<button class="material-symbols-outlined p-2 hover:bg-emerald-50 dark:hover:bg-emerald-900/30 rounded-full active:scale-95 duration-200" data-icon="history">history</button>
+<button class="material-symbols-outlined p-2 hover:bg-emerald-50 dark:hover:bg-emerald-900/30 rounded-full active:scale-95 duration-200" data-icon="filter_list">filter_list</button>
+</div>
+</div>
+</nav>
+<main class="pt-28 pb-32 px-6 max-w-7xl mx-auto">
+<!-- Header Section -->
+<header class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="space-y-2">
+<span class="text-secondary font-label text-[10px] uppercase tracking-[0.2em] font-bold">Collection Gallery</span>
+<h1 class="text-4xl md:text-5xl font-headline font-extrabold text-on-surface tracking-tight">Saved Lists</h1>
+<p class="text-on-surface-variant max-w-md">Your curated grocery archives. Access, refine, and re-stock your kitchen with precision.</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex -space-x-3 overflow-hidden">
+<img alt="User profile" class="inline-block h-10 w-10 rounded-full ring-2 ring-white" data-alt="portrait of a smiling professional woman in a modern kitchen setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLDPmj3T_Fy7uhY2Zhh4wAU7e1cM2572_CGfKsIA3lv6dpulv7wCzwu12TVliW3sqTw_q8on-kFKYET5VMOBCGcQBWdjxYQiedwhAYPQl7FMNko5JM_zKAdiaxaMrQA-XZK0Pq1EUbnATAXNeTcjSQDyGeb1bTdReF_NoslMkrx4GwTePhoH8p4Ca-lieeqcISan15Mv4Ber8B8efo7CL2--87svHp7YcA55FPvXpkLs7P8fuM7_9QI4_KcPfqyVAsx4wgK57L-yM"/>
+<div class="h-10 w-10 rounded-full ring-2 ring-white bg-primary-container flex items-center justify-center text-on-primary-container font-bold text-xs">+3</div>
+</div>
+<div class="h-10 w-[1px] bg-outline-variant/30 hidden md:block"></div>
+<div class="hidden md:block">
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Active Storage</p>
+<p class="text-sm font-semibold text-primary">84% Full</p>
+</div>
+</div>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Create New List Card (Asymmetric Entry) -->
+<button class="group relative flex flex-col items-center justify-center p-8 rounded-[2rem] border-2 border-dashed border-outline-variant/40 hover:border-primary/40 hover:bg-white transition-all duration-300 min-h-[280px]">
+<div class="w-16 h-16 rounded-full bg-surface-container-high group-hover:bg-primary-container flex items-center justify-center transition-colors mb-4">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-on-primary-container text-3xl" data-icon="add">add</span>
+</div>
+<span class="font-headline font-bold text-lg text-on-surface">Create New List</span>
+<span class="text-on-surface-variant text-sm mt-1">Start a fresh calculation</span>
+</button>
+<!-- Saved List Card 1: Weekly Essentials -->
+<div class="group relative bg-surface-container-lowest rounded-[2rem] p-6 flex flex-col justify-between overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] transition-all duration-300">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-secondary-container/30 text-on-secondary-container px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider">Recurring</div>
+<button class="material-symbols-outlined text-outline hover:text-error transition-colors p-2" data-icon="delete">delete</button>
+</div>
+<div>
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-1">Weekly Essentials</h3>
+<p class="text-on-surface-variant text-sm font-label mb-6">Saved on Dec 12, 2024</p>
+<div class="flex items-center gap-6 mb-8">
+<div>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">Items</p>
+<p class="text-xl font-headline font-extrabold text-on-surface">14 Items</p>
+</div>
+<div class="w-[1px] h-8 bg-outline-variant/20"></div>
+<div>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">Total</p>
+<p class="text-xl font-headline font-extrabold text-primary">$84.20</p>
+</div>
+</div>
+</div>
+<button class="w-full py-4 bg-primary text-on-primary rounded-full font-label font-bold text-sm tracking-widest uppercase flex items-center justify-center gap-2 group-hover:bg-primary-dim transition-colors active:scale-[0.98]">
+                    Re-open List
+                    <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Saved List Card 2: Sunday Roast -->
+<div class="group relative bg-white rounded-[2rem] p-6 flex flex-col justify-between overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] transition-all duration-300">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-[4rem] -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
+<div class="flex justify-between items-start mb-4 relative z-10">
+<div class="bg-tertiary-container/20 text-on-tertiary-container px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider">Occasion</div>
+<button class="material-symbols-outlined text-outline hover:text-error transition-colors p-2" data-icon="delete">delete</button>
+</div>
+<div class="relative z-10">
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-1">Sunday Roast</h3>
+<p class="text-on-surface-variant text-sm font-label mb-6">Saved on Nov 28, 2024</p>
+<div class="flex items-center gap-6 mb-8">
+<div>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">Items</p>
+<p class="text-xl font-headline font-extrabold text-on-surface">9 Items</p>
+</div>
+<div class="w-[1px] h-8 bg-outline-variant/20"></div>
+<div>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">Total</p>
+<p class="text-xl font-headline font-extrabold text-primary">$112.45</p>
+</div>
+</div>
+</div>
+<button class="w-full py-4 bg-primary text-on-primary rounded-full font-label font-bold text-sm tracking-widest uppercase flex items-center justify-center gap-2 group-hover:bg-primary-dim transition-colors active:scale-[0.98]">
+                    Re-open List
+                    <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Saved List Card 3: Keto Meal Prep -->
+<div class="group relative bg-surface-container-low rounded-[2rem] p-6 flex flex-col justify-between overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.04)] transition-all duration-300">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-primary-container/40 text-on-primary-container px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider">Dietary</div>
+<button class="material-symbols-outlined text-outline hover:text-error transition-colors p-2" data-icon="delete">delete</button>
+</div>
+<div>
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-1">Keto Meal Prep</h3>
+<p class="text-on-surface-variant text-sm font-label mb-6">Saved on Dec 05, 2024</p>
+<div class="flex items-center gap-6 mb-8">
+<div>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">Items</p>
+<p class="text-xl font-headline font-extrabold text-on-surface">22 Items</p>
+</div>
+<div class="w-[1px] h-8 bg-outline-variant/20"></div>
+<div>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">Total</p>
+<p class="text-xl font-headline font-extrabold text-primary">$156.90</p>
+</div>
+</div>
+</div>
+<button class="w-full py-4 bg-primary text-on-primary rounded-full font-label font-bold text-sm tracking-widest uppercase flex items-center justify-center gap-2 group-hover:bg-primary-dim transition-colors active:scale-[0.98]">
+                    Re-open List
+                    <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Saved List Card 4: Office Pantry -->
+<div class="group relative bg-white rounded-[2rem] p-6 flex flex-col justify-between overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] transition-all duration-300">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-surface-container-high text-on-surface-variant px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider">Bulk</div>
+<button class="material-symbols-outlined text-outline hover:text-error transition-colors p-2" data-icon="delete">delete</button>
+</div>
+<div>
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-1">Office Pantry</h3>
+<p class="text-on-surface-variant text-sm font-label mb-6">Saved on Dec 01, 2024</p>
+<div class="flex items-center gap-6 mb-8">
+<div>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">Items</p>
+<p class="text-xl font-headline font-extrabold text-on-surface">31 Items</p>
+</div>
+<div class="w-[1px] h-8 bg-outline-variant/20"></div>
+<div>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">Total</p>
+<p class="text-xl font-headline font-extrabold text-primary">$204.00</p>
+</div>
+</div>
+</div>
+<button class="w-full py-4 bg-primary text-on-primary rounded-full font-label font-bold text-sm tracking-widest uppercase flex items-center justify-center gap-2 group-hover:bg-primary-dim transition-colors active:scale-[0.98]">
+                    Re-open List
+                    <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Pagination/Load More - Editorial Style -->
+<div class="mt-20 flex flex-col items-center">
+<div class="h-[1px] w-24 bg-outline-variant/30 mb-8"></div>
+<p class="text-on-surface-variant font-label text-xs uppercase tracking-[0.3em] mb-4">Viewing 4 of 12 Lists</p>
+<button class="text-primary font-headline font-bold text-lg hover:underline underline-offset-8 decoration-2 decoration-primary-container">View Archived Collections</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+<div class="w-full px-8 py-12 flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto">
+<div class="flex flex-col gap-2">
+<span class="font-plus-jakarta-sans font-extrabold text-emerald-800 dark:text-emerald-200 text-xl">The Editorial Harvest</span>
+<p class="font-manrope text-xs font-medium text-slate-500">© 2024 The Editorial Harvest. Your Digital Concierge.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-manrope text-xs font-medium text-slate-500 hover:text-emerald-700 underline underline-offset-4 opacity-80 hover:opacity-100" href="#">Privacy</a>
+<a class="font-manrope text-xs font-medium text-slate-500 hover:text-emerald-700 underline underline-offset-4 opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-manrope text-xs font-medium text-slate-500 hover:text-emerald-700 underline underline-offset-4 opacity-80 hover:opacity-100" href="#">Support</a>
+</div>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 pb-safe bg-white/90 dark:bg-slate-950/90 backdrop-blur-xl shadow-[0_-4px_24px_rgba(0,0,0,0.06)] z-50">
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="font-manrope text-[10px] uppercase tracking-widest font-bold mt-1">Market</span>
+</div>
+<div class="flex flex-col items-center justify-center text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/20 rounded-xl px-3 py-1">
+<span class="material-symbols-outlined" data-icon="folder_special" data-weight="fill" style="font-variation-settings: 'FILL' 1;">folder_special</span>
+<span class="font-manrope text-[10px] uppercase tracking-widest font-bold mt-1">Saved</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500">
+<span class="material-symbols-outlined" data-icon="calculate">calculate</span>
+<span class="font-manrope text-[10px] uppercase tracking-widest font-bold mt-1">Calculators</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-manrope text-[10px] uppercase tracking-widest font-bold mt-1">Settings</span>
+</div>
+</nav>
+</body></html>
